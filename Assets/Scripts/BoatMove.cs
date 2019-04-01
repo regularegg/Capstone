@@ -11,13 +11,28 @@ public class BoatMove : MonoBehaviour
     public Text healthDispaly;
 
     public int health = 100;
+    
+    public LineRenderer lrLeft, lrRight;
     // Start is called before the first frame update
     void Start()
     {
         SR = GetComponent<SpriteRenderer>();
+        
+        lrLeft.SetPosition(0,lrLeft.transform.position);
+        lrLeft.SetPosition(1,new Vector3(-3,5,0));
+        
+        lrRight.SetPosition(0,lrRight.transform.position);
+        lrRight.SetPosition(1,new Vector3(3,5,0));
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    void Update()
+    {
+        lrLeft.SetPosition(0,lrLeft.transform.position);
+        lrRight.SetPosition(0,lrRight.transform.position);
+    
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
     {
         Debug.Log("Collision detected");
         if (other.transform.CompareTag("Hazard"))
@@ -27,6 +42,8 @@ public class BoatMove : MonoBehaviour
             Debug.Log("Ouch");
             if (health < 1)
             {
+                //if u die, do death sequence, and go to death scene
+
                 SceneManager.LoadScene("Calibration");
             }
         }

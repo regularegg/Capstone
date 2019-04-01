@@ -27,25 +27,28 @@ public class ThreadTest : MonoBehaviour
     public float yLowerBound = 125;
     public float yUpperBound = 605;
 
+    public bool ManualMove = false;
+
 
     //This will take the string from Python and turn it into 2 floats.
     //Then it will call mover(turns floats into vector3) in updateposition to update position.
-    private string textthing;
+    private string _textthing;
     public string TextThing
     {
-        get { return textthing; }
+        get { return _textthing; }
         set
         {
             float[] fValues = Array.ConvertAll(value.Split(','), float.Parse);
             if (fValues.Length == 2)
             {
+                Debug.Log("updating poss!!!!!");
                 UpdatePosition(mover(fValues[0],fValues[1]));
             }
             else
             {
                 Debug.Log("Couldn't execute update position");
             }
-            textthing = value;
+            _textthing = value;
         }
     }
 
@@ -65,6 +68,7 @@ public class ThreadTest : MonoBehaviour
     
     void UpdatePosition(Vector3 pos)
     {
+        Debug.Log("boat is update positioning");
         boat.transform.position = pos;
     }
     
@@ -99,18 +103,18 @@ public class ThreadTest : MonoBehaviour
                 byte[] data = client.Receive(ref anyIP); //4
 
                 string output = Encoding.UTF8.GetString(data); //5
-                Debug.Log(output);
+                //Debug.Log(output);
                 outputShow = output;
                 holder = output;
                 //print (">> " + output);
-                
-                
 
             } catch(System.Exception e)
             {
                 print (e.ToString()); //7
             }
         }
+        
+        
     }
 
     
@@ -119,11 +123,7 @@ public class ThreadTest : MonoBehaviour
     void Update()
     {
         textShow.text = outputShow;
-
-        if (holder != TextThing)
-        {
-            TextThing = holder;
-        }
+        TextThing = outputShow;
     }
     
     

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3137374194306025771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3137374194306025769}
+  - component: {fileID: 3137374194306025768}
+  m_Layer: 0
+  m_Name: Better Hazard Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3137374194306025769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137374194306025771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5937624, y: -1.7550557, z: -0.02037023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3137374194306025768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137374194306025771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c699171bbf3614e3481d7bcd3235326b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnInterval: 0
+  IncrementInterval: 0
+  XPositions: []
+  MonsterIndex: 
+  monstersPerRow: 
+  MonsterPrefabs:
+  - {fileID: 7359477690415627222, guid: 78ef91580dde144fe86bd6f8b166dc53, type: 3}
+  - {fileID: 7507233825621149398, guid: 230194934633040c7ad2eb51ee752107, type: 3}
+  - {fileID: 5937621085820122490, guid: e033989bf80de4343b6de172cb0137e7, type: 3}
+  - {fileID: 0}
+  MonstersLeft: 0
+  DefaultValues: 0
