@@ -18,9 +18,10 @@ public class EnemyBBehavior : MonoBehaviour
     public bool underwater;
     public Collider2D coll;
 
-    public float speed = 0.01f;
+    public float speed = 0.005f;
     public float dangerRadius = 0.2f;
-    
+
+    public HazardGenBetter HG;
     
     
     
@@ -32,6 +33,7 @@ public class EnemyBBehavior : MonoBehaviour
 
         target = GameObject.FindWithTag("Player");
         Active = true;
+        HG = FindObjectOfType<HazardGenBetter>();
         StartCoroutine(liveCountdown());
     }
 
@@ -66,6 +68,7 @@ public class EnemyBBehavior : MonoBehaviour
             if (transform.position.y < GameManager.GM.ymin)
             {
                 Destroy(gameObject);
+                HG.MonstersLeft--;
             }
         }
     }

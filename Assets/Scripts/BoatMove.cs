@@ -11,6 +11,8 @@ public class BoatMove : MonoBehaviour
     public Text healthDispaly;
 
     public int health = 100;
+
+    public int score;
     
     public LineRenderer lrLeft, lrRight;
     // Start is called before the first frame update
@@ -46,6 +48,10 @@ public class BoatMove : MonoBehaviour
 
                 SceneManager.LoadScene("Calibration");
             }
+        }
+        else if (other.transform.CompareTag("Treat"))
+        {
+            score++;
         }
     }
 

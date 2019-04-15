@@ -37,7 +37,6 @@ public class EnemyABehavior : MonoBehaviour
 
             inc = Mathf.Pow(inc,speed);
             
-            Debug.Log(currX + " " + currY + "inc: " + inc);
             transform.position = new Vector3(currX,currY);
             yield return wait;
         }

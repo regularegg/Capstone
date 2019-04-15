@@ -122,7 +122,7 @@ public class ThreadTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textShow.text = outputShow;
+        //textShow.text = outputShow;
         TextThing = outputShow;
     }
     

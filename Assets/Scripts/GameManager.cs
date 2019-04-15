@@ -10,15 +10,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> ActiveEnemies;
 
     public GameObject[] hazardGenerators;
-
-    public int time;
-    public int level;
-
-    public int enemiesPassed = 0;
-
-    public int maxEnemiesOnScreen;
-
-    public GameObject eA, eB, eC, eD;
+    public GameObject[] TreatGenerators;
+    public GameObject[] PrebuiltLevels;
+    public GameObject Tutorial;
     
     
     public float RiverSpeed;
@@ -32,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager GM = null;
 
-    public Text AnnouncementCenter;
+    public Text AnnouncementCenter, Points;
 
     //Event manager lol
     private int _currentEvent;
@@ -43,10 +37,13 @@ public class GameManager : MonoBehaviour
         {
             switch (value)
             {
-                    case 1: Instantiate(hazardGenerators[0]);
+                    case 1: Instantiate(Tutorial);
                         break;
-                    
-                    case 2: AnnouncementCenter.text = "Cool u win!";
+                    case 2: Instantiate(PrebuiltLevels[0]);
+                        break;
+                    case 3: Instantiate(hazardGenerators[2]);
+                        break;
+                    case 4: AnnouncementCenter.text = "Cool u win!";
                         break;
             }
             _currentEvent = value;
@@ -76,7 +73,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Points.text = "Points: " + PlayerScore;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentEvent = 2;
+        }
     }
 
     IEnumerator ReadySetGo()

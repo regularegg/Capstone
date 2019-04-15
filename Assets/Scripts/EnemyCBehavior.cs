@@ -26,7 +26,7 @@ public class EnemyCBehavior : MonoBehaviour
         {
             Debug.Log("Frog off screen bye");
             //Remove decrease the monster count
-            HG.MonstersLeft--;
+            //HG.MonstersLeft--;
             Destroy(gameObject);
         }
     }
