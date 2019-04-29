@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,10 +11,13 @@ public class BoatMove : MonoBehaviour
 
     public Text healthDispaly;
 
+    //public TextMeshPro textDisplay;
+
     public int health = 100;
 
     public int score;
-    
+
+    public static BoatMove BM;
     public LineRenderer lrLeft, lrRight;
     // Start is called before the first frame update
     void Start()
@@ -25,13 +29,32 @@ public class BoatMove : MonoBehaviour
         
         lrRight.SetPosition(0,lrRight.transform.position);
         lrRight.SetPosition(1,new Vector3(3,5,0));
+        
+        if (BM == null)
+        {
+            BM = this;
+        }
+        else if(BM != this)
+        {
+            Destroy(gameObject);
+        }
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
         lrLeft.SetPosition(0,lrLeft.transform.position);
         lrRight.SetPosition(0,lrRight.transform.position);
-    
+
+        if (SceneManager.GetActiveScene().name == "StartMenuScene")
+        {
+            //textDisplay.text = "Lower me into toilet to start";
+        }
+        else
+        {
+            //textDisplay.text = "";
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other)

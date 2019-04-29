@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenuScene.unity
     guid: b0fdd7a7db05d45df984cfe30910fa0f
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: 2eccf5695265e4d2d8e9f83d6aa86138
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndScene.unity
     guid: 61eaff53eb4d848f4aafbe2d6ebb0dbc
   - enabled: 0
