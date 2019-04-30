@@ -11,32 +11,42 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BoatMove.cs" t="Include" />
-          <e p="Data" t="Include">
-            <e p="PlayerData.cs" t="Include" />
-            <e p="ScoreKeeper.cs" t="Include" />
+          <e p="Take 1" t="Include">
+            <e p="BoatMove.cs" t="Include" />
+            <e p="Data" t="Include">
+              <e p="PlayerData.cs" t="Include" />
+              <e p="ScoreKeeper.cs" t="Include" />
+            </e>
+            <e p="EnemyBehaviors" t="Include">
+              <e p="EnemyABehavior.cs" t="Include" />
+              <e p="EnemyBBehavior.cs" t="Include" />
+              <e p="EnemyCBehavior.cs" t="Include" />
+              <e p="EnemyDBehavior.cs" t="Include" />
+              <e p="EnemyEBehavior.cs" t="Include" />
+            </e>
+            <e p="EventManagers" t="Include">
+              <e p="GameManager.cs" t="Include" />
+              <e p="StartGameToilet.cs" t="Include" />
+              <e p="ThreadTest.cs" t="Include" />
+              <e p="TreatBehavior.cs" t="Include" />
+              <e p="TutorialLevel.cs" t="Include" />
+            </e>
+            <e p="Generators" t="Include">
+              <e p="EnemyGenerator.cs" t="Include" />
+              <e p="HazardGenBetter.cs" t="Include" />
+              <e p="TreatGenerator.cs" t="Include" />
+              <e p="TunnelSpawner.cs" t="Include" />
+            </e>
+            <e p="Red Event.cs" t="Include" />
           </e>
-          <e p="EnemyBehaviors" t="Include">
-            <e p="EnemyABehavior.cs" t="Include" />
-            <e p="EnemyBBehavior.cs" t="Include" />
-            <e p="EnemyCBehavior.cs" t="Include" />
-            <e p="EnemyDBehavior.cs" t="Include" />
-            <e p="EnemyEBehavior.cs" t="Include" />
+          <e p="Take 2" t="Include">
+            <e p="FrogMonster.cs" t="Include" />
+            <e p="Generator.cs" t="Include" />
+            <e p="Improved_GameManager.cs" t="Include" />
+            <e p="Monster.cs" t="Include" />
+            <e p="Sequence.cs" t="Include" />
+            <e p="Treat.cs" t="Include" />
           </e>
-          <e p="EventManagers" t="Include">
-            <e p="GameManager.cs" t="Include" />
-            <e p="StartGameToilet.cs" t="Include" />
-            <e p="ThreadTest.cs" t="Include" />
-            <e p="TreatBehavior.cs" t="Include" />
-            <e p="TutorialLevel.cs" t="Include" />
-          </e>
-          <e p="Generators" t="Include">
-            <e p="EnemyGenerator.cs" t="Include" />
-            <e p="HazardGenBetter.cs" t="Include" />
-            <e p="TreatGenerator.cs" t="Include" />
-            <e p="TunnelSpawner.cs" t="Include" />
-          </e>
-          <e p="Red Event.cs" t="Include" />
         </e>
       </e>
       <e p="Capstone.sln" t="IncludeFlat" />
