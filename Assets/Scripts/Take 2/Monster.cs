@@ -43,7 +43,15 @@ public class Monster : MonoBehaviour
     //setRow() if negative, sets row to above top of screen
     //setColumn()
 
+<<<<<<< HEAD
     public int ReturnRow()
+=======
+    public void setPosition(int x, int y) {
+
+    }
+
+    public void Deactivate()
+>>>>>>> fcd1c9912672f57fc12ce23f5a58a40891d4df26
     {
         return Row;
     }
@@ -78,5 +86,8 @@ public class Monster : MonoBehaviour
         Activated = false;
         transform.position = StartPos;
         ReadyForPool = true;
+    }
+    public int row() {
+        return 1;
     }
 }
