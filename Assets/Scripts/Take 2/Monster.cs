@@ -33,6 +33,10 @@ public class Monster : MonoBehaviour
         
     }
 
+    public void setPosition(int x, int y) {
+
+    }
+
     public void Deactivate()
     {
         
@@ -40,5 +44,8 @@ public class Monster : MonoBehaviour
     public void PlaySound()
     {
         
+    }
+    public int row() {
+        return 1;
     }
 }
