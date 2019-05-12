@@ -77,9 +77,12 @@
     <Compile Include="Assets\Scripts\Take 2\FrogMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Generator.cs" />
     <Compile Include="Assets\Scripts\Take 2\Improved_GameManager.cs" />
+    <Compile Include="Assets\Scripts\Take 2\LeechMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Monster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Sequence.cs" />
     <Compile Include="Assets\Scripts\Take 2\Treat.cs" />
+    <Compile Include="Assets\Scripts\Take 2\Water Generation\WaterBlob.cs" />
+    <Compile Include="Assets\Scripts\Take 2\Water Generation\WaterGenerator.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/MaryLi/Documents/SPR19/CAPSTONE/Capstone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

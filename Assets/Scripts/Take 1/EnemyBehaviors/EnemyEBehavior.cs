@@ -6,14 +6,13 @@ using UnityEngine;
 public class EnemyEBehavior : Monster
 {
     public GameObject projectilePrefab;
-
     public int projectilesLeft = 5;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        this.ass = 420;
+        
     }
 
     // Update is called once per frame
@@ -21,4 +20,5 @@ public class EnemyEBehavior : Monster
     {
         
     }
+    
 }

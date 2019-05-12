@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Mary
 public class Monster : MonoBehaviour
 {
-    protected int ass = 69;
-    
+    protected bool Activated = false;
     //Target Position to Move to
     protected Vector3 Target, StartPos = new Vector3(0,-10,0);
     protected bool Alive = true;
@@ -16,8 +16,28 @@ public class Monster : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    /*
+    protected virtual void Update ()
+    {
+        Debug.Log("PowerUp");
+    }*/
+
+    public void Move()
+    {
+        
+    }
+    
+    public void Activate()
+    {
+        Activated = true;
+        
+    }
+
+    public void Deactivate()
+    {
+        
+    }
+    public void PlaySound()
     {
         
     }

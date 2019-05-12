@@ -43,6 +43,7 @@
             <e p="FrogMonster.cs" t="Include" />
             <e p="Generator.cs" t="Include" />
             <e p="Improved_GameManager.cs" t="Include" />
+            <e p="LeechMonster.cs" t="Include" />
             <e p="Monster.cs" t="Include" />
             <e p="Sequence.cs" t="Include" />
             <e p="Treat.cs" t="Include" />

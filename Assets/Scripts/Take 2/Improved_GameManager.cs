@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Doron
 public class Improved_GameManager : MonoBehaviour
 {
     public static Improved_GameManager GM;
@@ -11,6 +11,8 @@ public class Improved_GameManager : MonoBehaviour
     //Player stats
     public int Score;
     public int Health;
+
+    public float speed = 1f;
     
     
     // Start is called before the first frame update

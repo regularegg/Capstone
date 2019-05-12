@@ -1510,7 +1510,7 @@ Transform:
   m_Children:
   - {fileID: 363963822}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &943663987
 GameObject:
@@ -2016,7 +2016,7 @@ Transform:
   m_Children:
   - {fileID: 1092930075}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194347804
 GameObject:
@@ -2096,7 +2096,7 @@ Transform:
   m_Children:
   - {fileID: 497015989}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262765364
 GameObject:
@@ -2175,7 +2175,7 @@ Transform:
   m_LocalScale: {x: 0.70705354, y: 0.961, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653849115
 GameObject:
@@ -2287,7 +2287,7 @@ Transform:
   - {fileID: 500748510}
   - {fileID: 553293404}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717416516
 GameObject:
@@ -2542,6 +2542,56 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3315029668722770610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1943714491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943714492}
+  - component: {fileID: 1943714493}
+  m_Layer: 0
+  m_Name: Water Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1943714492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943714491}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9114714, y: -1.2225536, z: -0.08593787}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943714493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943714491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770114b402bb647c9acd2fe39fae4c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wat_blob: {fileID: 1764951207172109988, guid: 4c39f12a3a84e4774b703ac71dad3938,
+    type: 3}
+  camera_left_bound: -4.5
+  camera_right_bound: 4.5
+  camera_upper_bound: 5.19
+  camera_lower_bound: -16.3
+  layer_order: -2
 --- !u!1 &1975138902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,7 +2898,7 @@ PrefabInstance:
     - target: {fileID: 5482351124804061075, guid: 8cc02ed1f495a491889b369d7abc40e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5482351124804061075, guid: 8cc02ed1f495a491889b369d7abc40e3,
         type: 3}
