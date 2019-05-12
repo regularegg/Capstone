@@ -46,7 +46,12 @@
             <e p="LeechMonster.cs" t="Include" />
             <e p="Monster.cs" t="Include" />
             <e p="Sequence.cs" t="Include" />
+            <e p="TentaclesMonster.cs" t="Include" />
             <e p="Treat.cs" t="Include" />
+            <e p="Water Generation" t="Include">
+              <e p="WaterBlob.cs" t="Include" />
+              <e p="WaterGenerator.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>

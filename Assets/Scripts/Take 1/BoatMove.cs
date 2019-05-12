@@ -14,8 +14,9 @@ public class BoatMove : MonoBehaviour
     //public TextMeshPro textDisplay;
 
     public int health = 100;
-
     public int score;
+
+    public bool BeingHit;
 
     public static BoatMove BM;
     public LineRenderer lrLeft, lrRight;
@@ -78,8 +79,28 @@ public class BoatMove : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Hazard"))
+        {
+            StartCoroutine(OnHitHazardWait());
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D other)
     {
         SR.color = Color.white;
+        BeingHit = false;
+        StopCoroutine(OnHitHazardWait());
+    }
+
+    IEnumerator OnHitHazardWait()
+    {
+        WaitForSeconds wait = new WaitForSeconds(1.5f);
+        while (BeingHit)
+        {
+            health--;
+            yield return wait;
+        }
     }
 }

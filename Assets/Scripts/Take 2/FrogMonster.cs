@@ -32,7 +32,7 @@ public class FrogMonster : Monster
             Move();
         }
 
-        if (transform.position.y < -10)
+        if (transform.position.y < OffScreen)
         {
             Deactivate();
         }
