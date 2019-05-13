@@ -28,6 +28,8 @@ public class ThreadTest : MonoBehaviour
     public float yUpperBound = 605;
 
 
+    public bool useMouse;
+
     public static ThreadTest TT;
     //This will take the string from Python and turn it into 2 floats.
     //Then it will call mover(turns floats into vector3) in updateposition to update position.
@@ -40,7 +42,6 @@ public class ThreadTest : MonoBehaviour
             float[] fValues = Array.ConvertAll(value.Split(','), float.Parse);
             if (fValues.Length == 2)
             {
-                Debug.Log("updating poss!!!!!");
                 UpdatePosition(mover(fValues[0],fValues[1]));
             }
             else
@@ -67,18 +68,21 @@ public class ThreadTest : MonoBehaviour
     
     void UpdatePosition(Vector3 pos)
     {
-        Debug.Log("boat is update positioning");
         boat.transform.position = pos;
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        port = 5065; //1 
-        InitUDP(); //4
-        boat = GameObject.Find("toot the turt");
-        outputShow = "0,0";
-        
+        if (!useMouse)
+        {
+            port = 5065; //1 
+            InitUDP(); //4
+            boat = GameObject.Find("toot the turt");
+            outputShow = "0,0";
+
+        }
+
         if (TT == null)
         {
             TT = this;
@@ -135,7 +139,10 @@ public class ThreadTest : MonoBehaviour
     void Update()
     {
         //textShow.text = outputShow;
-        TextThing = outputShow;
+        if (!useMouse)
+        {
+            TextThing = outputShow;
+        }
     }
     
     

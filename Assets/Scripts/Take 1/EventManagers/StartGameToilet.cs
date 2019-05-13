@@ -28,7 +28,6 @@ public class StartGameToilet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("plpl");
             countdown+= 0.5f;
             LoadingBar.fillAmount = countdown / 100;
         }

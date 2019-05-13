@@ -10,7 +10,7 @@ public class Monster : MonoBehaviour
 
     public bool ReadyForPool;
     //Target Position to Move to
-    protected Vector3 Target, StartPos = new Vector3(0,10,0);
+    protected Vector3 Target, StartPos = new Vector3(0,0,0);
     protected float OffScreen = -10f;
     protected bool Alive = true;
 
@@ -43,15 +43,7 @@ public class Monster : MonoBehaviour
     //setRow() if negative, sets row to above top of screen
     //setColumn()
 
-<<<<<<< HEAD
     public int ReturnRow()
-=======
-    public void setPosition(int x, int y) {
-
-    }
-
-    public void Deactivate()
->>>>>>> fcd1c9912672f57fc12ce23f5a58a40891d4df26
     {
         return Row;
     }
@@ -86,8 +78,5 @@ public class Monster : MonoBehaviour
         Activated = false;
         transform.position = StartPos;
         ReadyForPool = true;
-    }
-    public int row() {
-        return 1;
     }
 }

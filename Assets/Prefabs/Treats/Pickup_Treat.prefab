@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4370759881336483294}
   - component: {fileID: 4455863739082412059}
-  - component: {fileID: 7891346943931379829}
   - component: {fileID: 1315772752817720245}
   - component: {fileID: 3026634312858553539}
+  - component: {fileID: 1193733584}
   m_Layer: 0
   m_Name: Pickup_Treat
   m_TagString: Treat
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aadd3da768f8947c3a4eea46b40671b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a896c11689f24288aefe44fd796cd93, type: 3}
   m_Color: {r: 1, g: 0.97662324, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,22 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7891346943931379829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5823163124411278905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d415bbe8368684db58d8b3df6e6fdea8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TG: {fileID: 0}
-  TL: {fileID: 0}
-  speed: 0
-  autonomous: 1
 --- !u!50 &1315772752817720245
 Rigidbody2D:
   serializedVersion: 4
@@ -129,9 +113,30 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &1193733584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823163124411278905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b6e2140c0dc4a5d954633672945567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReadyForPool: 0
+  Row: 0
+  Col: 0
+  StartPos: {x: 0, y: 0, z: 0}
+  speed: 0
+  SR: {fileID: 4455863739082412059}
+  Sprites:
+  - {fileID: 21300000, guid: 8a896c11689f24288aefe44fd796cd93, type: 3}
+  - {fileID: 21300000, guid: a9302f9e27df74807a441f98f216ba09, type: 3}

@@ -8,8 +8,9 @@ public class Treat : Monster
     public Vector3 StartPos;
     public float speed;
     public SpriteRenderer SR;
-
     public Sprite[] Sprites;
+    public AudioSource AS;
+    public AudioClip[] clips;
     
     
     // Start is called before the first frame update
@@ -17,9 +18,9 @@ public class Treat : Monster
     {
         StartPos.x = Random.Range(-5, 5);
         GetComponent<Transform>().position = StartPos;
-        speed = Improved_GameManager.GM.speed;
+        speed = 0.3f;
         SR = GetComponent<SpriteRenderer>();
-        
+        AS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,5 +46,16 @@ public class Treat : Monster
     {
         Deactivate();
         SR.sprite = Sprites[Random.Range(0, 2)];
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("cool");
+        if (other.transform.CompareTag("Player"))
+        {
+            AS.clip = clips[Random.Range(0, clips.Length)];
+            AS.Play();
+            ResetTreat();
+        }
     }
 }

@@ -140,7 +140,7 @@ public class Improved_GameManager : MonoBehaviour
 
     private bool floatedDownTheRiver() {
         for ( int i = 0; i < floatinDownTheRiver.Count; i++) {
-            if (floatinDownTheRiver[i].row() < 5) {
+            if (floatinDownTheRiver[i].ReturnRow() < 5) {
                 return false;
             }
         }

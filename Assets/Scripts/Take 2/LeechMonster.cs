@@ -23,7 +23,7 @@ public class LeechMonster : Monster
     {
         if (Activated)
         {
-            if (attacks < 2)
+            if (attacks < 2 && !isAttacking)
             {
                 
             }
