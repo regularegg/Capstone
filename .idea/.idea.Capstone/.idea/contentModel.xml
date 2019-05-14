@@ -14,7 +14,6 @@
           <e p="Take 1" t="Include">
             <e p="BoatMove.cs" t="Include" />
             <e p="Data" t="Include">
-              <e p="PlayerData.cs" t="Include" />
               <e p="ScoreKeeper.cs" t="Include" />
             </e>
             <e p="EnemyBehaviors" t="Include">

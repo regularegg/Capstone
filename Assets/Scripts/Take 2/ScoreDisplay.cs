@@ -9,6 +9,8 @@ public class ScoreDisplay : MonoBehaviour
     public Text scoreOutput;
 
     public String scoreText = "";
+
+    public bool highscore;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,15 @@ public class ScoreDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreOutput.text = scoreText+ BoatMove.BM.score;
+        if (highscore)
+        {
+            scoreOutput.text = scoreText+ BoatMove.BM.highestScore;
+
+        }
+        else
+        {
+            scoreOutput.text = scoreText+ BoatMove.BM.score;
+
+        }
     }
 }

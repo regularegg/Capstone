@@ -894,6 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreOutput: {fileID: 1150288494}
   scoreText: 
+  highscore: 0
 --- !u!1 &1262765364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1513,7 @@ PrefabInstance:
     - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
         type: 3}
       propertyPath: UseMouse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
         type: 3}
@@ -1562,6 +1563,21 @@ PrefabInstance:
     - target: {fileID: 1847858871, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
@@ -1650,7 +1666,7 @@ PrefabInstance:
     - target: {fileID: 8429760819516047709, guid: 1a9b2a55eed2d4f498a2ce2b6cf73140,
         type: 3}
       propertyPath: useMouse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a9b2a55eed2d4f498a2ce2b6cf73140, type: 3}

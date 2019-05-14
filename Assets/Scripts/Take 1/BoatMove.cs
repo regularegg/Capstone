@@ -11,6 +11,8 @@ public class BoatMove : MonoBehaviour
 
     public Text healthDispaly;
 
+    public int highestScore;
+
     public TextMeshPro textDisplay;
 
     public Image[] Hearts;
@@ -131,9 +133,16 @@ public class BoatMove : MonoBehaviour
 
     void Die()
     {
+        if (score > highestScore)
+        {
+            highestScore = score;
+        }
+
+        score = 0;
         Improved_GameManager.GM.Permadeath();
         Improved_GameManager.GM.AS.Stop();
         SceneManager.LoadScene("EndScene");
         
+        health = 6;
     }
 }

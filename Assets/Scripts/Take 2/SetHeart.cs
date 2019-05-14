@@ -17,7 +17,6 @@ public class SetHeart : MonoBehaviour
 
         BoatMove.BM.Hearts = hearts;
         
-        Improved_GameManager.GM.StartGame();
         Improved_GameManager.GM.AS.Play();
     }
 }

@@ -18,7 +18,7 @@ public class LeechMonster : Monster
 
     void Move()
     {
-        float xMove = Mathf.Sin(Time.frameCount * 0.1f);
+        float xMove = Mathf.Sin(Time.frameCount) * 0.01f;
         transform.position += Vector3.down * speed + Vector3.right * xMove;
     }
     
