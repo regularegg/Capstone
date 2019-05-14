@@ -12,16 +12,30 @@ public class StartGameToilet : MonoBehaviour
     public string sceneToChange;
 
     public Image LoadingBar;
+
+    public AudioSource AS;
+    public AudioClip flush, splash;
+    
     
 
     // Update is called once per frame
     void Update()
     {
-        if (countdown >= 100)
+        if (countdown >= 100 && countdown <= 101.5f) 
         {
-            Debug.Log("Next scene");
-            SceneManager.LoadScene(sceneToChange);
+            StartCoroutine(changeScene());
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            AS.Stop();
+            AS.clip = splash;
+            AS.Play();
+        }
+        
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -41,5 +55,18 @@ public class StartGameToilet : MonoBehaviour
             LoadingBar.fillAmount = countdown / 100;
 
         }
+    }
+
+    IEnumerator changeScene()
+    {
+        AS.clip = flush;
+        AS.Play();
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        while (AS.isPlaying)
+        {
+            yield return wait;
+        }
+        
+        SceneManager.LoadScene(sceneToChange);
     }
 }

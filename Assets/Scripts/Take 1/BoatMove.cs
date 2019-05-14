@@ -13,7 +13,38 @@ public class BoatMove : MonoBehaviour
 
     public TextMeshPro textDisplay;
 
-    public int health = 100;
+    public Image[] Hearts;
+    public Sprite fullHeart, halfHeart, emptyHeart;
+    private int _health;
+    public int health
+    {
+        get { return _health; }
+        set
+        {
+            _health = value;
+            switch (value)
+            {
+                case 5: Hearts[0].sprite = halfHeart;
+                     break;
+                case 4: Hearts[0].sprite = emptyHeart;
+                    break;
+                case 3: Hearts[1].sprite = halfHeart;
+                    break;
+                case 2: Hearts[1].sprite = emptyHeart;
+                    break;
+                case 1: Hearts[2].sprite = halfHeart;
+                    break;
+                case 0: Hearts[2].sprite = emptyHeart;
+                    Die();
+                    //play death animation
+                    break;
+            }
+        }
+
+    }
+
+    public bool Alive = true;
+    
     public int score;
 
     public bool BeingHit;
@@ -51,6 +82,8 @@ public class BoatMove : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
+
+        health = 6;
     }
 
     void Update()
@@ -73,37 +106,9 @@ public class BoatMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        /*
-        Debug.Log("Collision detected");
-        if (other.transform.CompareTag("Hazard"))
-        {
-            SR.color = Color.red;
-            healthDispaly.text = "Health: "+ --health;
-            Debug.Log("Ouch");
-            if (health == 0)
-            {
-                //if u die, do death sequence, and go to death scene
-
-                SceneManager.LoadScene("Calibration");
-            }
-        }*/
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.transform.CompareTag("Hazard"))
-        {
-            StartCoroutine(OnHitHazardWait());
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
+    private void OnTriggerExit2D(Collider2D other){
         SR.color = Color.white;
         BeingHit = false;
-        StopCoroutine(OnHitHazardWait());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -115,17 +120,20 @@ public class BoatMove : MonoBehaviour
             AS.Play();
             score++;
         }
-    }
-
-    IEnumerator OnHitHazardWait()
-    {
-        WaitForSeconds wait = new WaitForSeconds(1.5f);
-        while (BeingHit)
+        
+        if (other.transform.CompareTag("Hazard"))
         {
             health--;
             AS.clip = Ouch[Random.Range(0,Ouch.Length)];
             AS.Play();
-            yield return wait;
         }
+    }
+
+    void Die()
+    {
+        Improved_GameManager.GM.Permadeath();
+        Improved_GameManager.GM.AS.Stop();
+        SceneManager.LoadScene("EndScene");
+        
     }
 }

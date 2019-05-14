@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Doron
 public class Improved_GameManager : MonoBehaviour
 {
@@ -24,16 +25,22 @@ public class Improved_GameManager : MonoBehaviour
     public List<TextAsset> levels_3_difficulty;
     public List<TextAsset> levels_4_difficulty;
     private List<TextAsset>[] allLevels;
-    private List<Monster> floatinDownTheRiver;
-    private List<Monster> toFloatDownTheRiver;
+    public List<Monster> floatinDownTheRiver;
+    public List<Monster> toFloatDownTheRiver;
     private List<Monster> toCheckForPooling;
     public int currentLevel = 0;
 
+
+    //Background music
+    public AudioSource AS;
+    public AudioClip PlaySceneMusic;
+    public bool PlayAudio;
+    
     //Player stats
     public int Score;
     public int Health;
 
-    public float speed = 1f;
+    public float speed = 0.05f;
     
     
     // Start is called before the first frame update
@@ -46,16 +53,32 @@ public class Improved_GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
+        pools = new List<Queue<Monster>>();
+
         DontDestroyOnLoad(gameObject);
 
 
-        instatiatePoolObjects();
-
-        fillAllLevels();
+        StartGame();
 
     }
 
+    public void StartGame(){
+        
+        Debug.Log("Started Game");
+        
+        instatiatePoolObjects();
+
+        fillAllLevels();
+        floatinDownTheRiver = setUpTheHounds();
+        toFloatDownTheRiver = setUpTheHounds();
+        for (int i = 0; i < floatinDownTheRiver.Count; i++)
+        {
+            floatinDownTheRiver[i].Activate();
+            floatinDownTheRiver[i].gameObject.SetActive(true);
+        }
+    }
+    
     private void instatiatePoolObjects() {
         // instantiate objects in pools
         //pools.Add(null);
@@ -64,19 +87,31 @@ public class Improved_GameManager : MonoBehaviour
         }
         for (int m = 0; m < 25; m++) {
             GameObject gameObj = Instantiate(treat);
-            pools[1].Enqueue(gameObj.GetComponent<Monster>());
+            Monster mon = gameObj.GetComponent<Monster>();
+            mon.Deactivate();
+            gameObj.SetActive(false);
+            pools[1].Enqueue(mon);
         }
         for (int m = 0; m < 25; m++) {
             GameObject gameObj = Instantiate(frog);
-            pools[2].Enqueue(gameObj.GetComponent<Monster>());
+            Monster mon = gameObj.GetComponent<Monster>();
+            mon.Deactivate();
+            gameObj.SetActive(false);
+            pools[2].Enqueue(mon);
         }
         for (int m = 0; m < 25; m++) {
             GameObject gameObj = Instantiate(leech);
-            pools[3].Enqueue(gameObj.GetComponent<Monster>());
+            Monster mon = gameObj.GetComponent<Monster>();
+            mon.Deactivate();
+            gameObj.SetActive(false);
+            pools[3].Enqueue(mon);
         }
         for (int m = 0; m < 25; m++) {
             GameObject gameObj = Instantiate(tenticles);
-            pools[4].Enqueue(gameObj.GetComponent<Monster>());
+            Monster mon = gameObj.GetComponent<Monster>();
+            mon.Deactivate();
+            gameObj.SetActive(false);
+            pools[4].Enqueue(mon);
         }
     }
 
@@ -91,11 +126,29 @@ public class Improved_GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if ( floatedDownTheRiver()) {
-            toCheckForPooling = floatinDownTheRiver;
-            floatinDownTheRiver = toFloatDownTheRiver;
-            releaseTheHounds();
-            toFloatDownTheRiver = setUpTheHounds();
+        
+
+        if (SceneManager.GetActiveScene().name == "GamePlay")
+        {
+            if (floatedDownTheRiver()) {
+                returnToQueue();
+                toCheckForPooling = floatinDownTheRiver;
+                floatinDownTheRiver = toFloatDownTheRiver;
+                releaseTheHounds();
+                toFloatDownTheRiver = setUpTheHounds();
+            }
+            if (!PlayAudio)
+            {
+                PlayAudio = true;
+                AS.clip = PlaySceneMusic;
+                AS.Play();
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name != "GamePlay")
+        {
+            AS.Stop();
+            PlayAudio = false;
         }
         
     }
@@ -135,15 +188,45 @@ public class Improved_GameManager : MonoBehaviour
     private void releaseTheHounds() {
         for (int i = 0; i < floatinDownTheRiver.Count; i++) {
             floatinDownTheRiver[i].Activate();
+            floatinDownTheRiver[i].gameObject.SetActive(true);
+
         }
     }
 
     private bool floatedDownTheRiver() {
-        for ( int i = 0; i < floatinDownTheRiver.Count; i++) {
-            if (floatinDownTheRiver[i].ReturnRow() < 5) {
+        for ( int i = 0; i < floatinDownTheRiver.Count; i++ ) {
+            if (floatinDownTheRiver[i].transform.position.y > 0) {
                 return false;
             }
         }
         return true;
+    }
+
+    private void returnToQueue() {
+        for ( int i = 0; i < floatinDownTheRiver.Count; i++) {
+            //floatinDownTheRiver[i].gameObject.SetActive(false);
+            if(floatinDownTheRiver[i].GetComponent<Treat>() != null) {
+                pools[1].Enqueue(floatinDownTheRiver[i]);
+            }
+            if (floatinDownTheRiver[i].GetComponent<FrogMonster>() != null) {
+                pools[2].Enqueue(floatinDownTheRiver[i]);
+            }
+            if (floatinDownTheRiver[i].GetComponent<LeechMonster>() != null) {
+                pools[3].Enqueue(floatinDownTheRiver[i]);
+            }
+            if (floatinDownTheRiver[i].GetComponent<TentaclesMonster>() != null) {
+                pools[4].Enqueue(floatinDownTheRiver[i]);
+            }
+        }
+    }
+
+    public void Permadeath()
+    {
+        returnToQueue();
+        floatinDownTheRiver = toFloatDownTheRiver;
+        returnToQueue();
+        
+        floatinDownTheRiver.Clear();
+        toFloatDownTheRiver.Clear();
     }
 }

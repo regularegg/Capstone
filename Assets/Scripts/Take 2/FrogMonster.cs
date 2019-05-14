@@ -5,7 +5,7 @@ using UnityEngine;
 public class FrogMonster : Monster
 {
     public Sequence SQ;
-    public float speed = 0;
+    public float speed = 0.1f;
     public Animator Anim;
     public AudioSource AS;
     public AudioClip Attack;
@@ -13,11 +13,12 @@ public class FrogMonster : Monster
     // Start is called before the first frame update
     void Start()
     {
-        StartPos.x = Random.Range(-5, 5);
-        transform.position = StartPos;
         speed = Improved_GameManager.GM.speed;
         Anim = GetComponent<Animator>();
         AS = GetComponent<AudioSource>();
+        AS.clip = Attack;
+        Anim.enabled = false;
+        //TEMP
     }
 
     /*override protected void Update ()
@@ -30,11 +31,16 @@ public class FrogMonster : Monster
         if (Activated)
         {
             Move();
-        }
 
-        if (transform.position.y < OffScreen)
-        {
-            Deactivate();
+            if (transform.position.y < OnScreen)
+            {
+                Anim.enabled = true;
+                Anim.Play("Attack");
+            }
+            if (transform.position.y < OffScreen)
+            {
+                Deactivate();
+            }
         }
     }
 
@@ -45,7 +51,7 @@ public class FrogMonster : Monster
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.transform.CompareTag("Player"))
         {
             AS.Play();
         }

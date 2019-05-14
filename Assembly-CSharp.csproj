@@ -74,16 +74,23 @@
     <Compile Include="Assets\Scripts\Take 1\Generators\TreatGenerator.cs" />
     <Compile Include="Assets\Scripts\Take 1\Generators\TunnelSpawner.cs" />
     <Compile Include="Assets\Scripts\Take 1\Red Event.cs" />
+    <Compile Include="Assets\Scripts\Take 2\DisplayEndScore.cs" />
     <Compile Include="Assets\Scripts\Take 2\FrogMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Generator.cs" />
     <Compile Include="Assets\Scripts\Take 2\Improved_GameManager.cs" />
     <Compile Include="Assets\Scripts\Take 2\LeechMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Monster.cs" />
+    <Compile Include="Assets\Scripts\Take 2\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\Take 2\Sequence.cs" />
+    <Compile Include="Assets\Scripts\Take 2\SetHeart.cs" />
     <Compile Include="Assets\Scripts\Take 2\TentaclesMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Treat.cs" />
     <Compile Include="Assets\Scripts\Take 2\Water Generation\WaterBlob.cs" />
     <Compile Include="Assets\Scripts\Take 2\Water Generation\WaterGenerator.cs" />
+    <None Include="Assets\Scripts\Take 2\LevelText\level 3.txt" />
+    <None Include="Assets\Scripts\Take 2\LevelText\level 4.txt" />
+    <None Include="Assets\Scripts\Take 2\LevelText\level 2.txt" />
+    <None Include="Assets\Scripts\Take 2\LevelText\level 1.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/MaryLi/Documents/SPR19/CAPSTONE/Capstone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

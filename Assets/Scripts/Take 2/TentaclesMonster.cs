@@ -6,24 +6,32 @@ public class TentaclesMonster : Monster
 {
     
     public Sequence SQ;
-    public float speed = 0;
+    public float speed = 0.75f;
     public Animator Anim;
     public AudioSource AS;
     public AudioClip Attack;
     
-    public bool arrivedAtTarget = false;
+    public bool arrivedAtTarget = true;
 
     
     // Start is called before the first frame update
     void Start()
     {
+        AS.GetComponent<AudioSource>();
+        AS.clip = Attack;
+        Target = new Vector3(Random.Range(-2.5f,2.5f),transform.position.y - 3f);
+        arrivedAtTarget = false;
+        StartCoroutine(MoveToTarget());
+    }
+
+    void Update()
+    {
         if (Activated)
         {
             if (arrivedAtTarget)
             {
-                Debug.Log("new target");
-                Target = new Vector3(transform.position.x * -1, transform.position.y + 3f);
-
+                Target = new Vector3(transform.position.x * -1, transform.position.y - 3f);
+                
                 arrivedAtTarget = false;
                 StartCoroutine(MoveToTarget());
             }
@@ -34,11 +42,10 @@ public class TentaclesMonster : Monster
             Deactivate();
         }
     }
-
-    
    
     IEnumerator MoveToTarget()
     {
+        
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
         
         float startX = transform.position.x;
@@ -59,5 +66,13 @@ public class TentaclesMonster : Monster
 
         //update the target position for next round
         arrivedAtTarget = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            AS.Play();
+        }
     }
 }
