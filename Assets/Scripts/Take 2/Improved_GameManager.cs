@@ -56,7 +56,7 @@ public class Improved_GameManager : MonoBehaviour
 
         pools = new List<Queue<Monster>>();
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
 
         StartGame();
