@@ -34,8 +34,8 @@ public class FrogMonster : Monster
 
             if (transform.position.y < OnScreen)
             {
-                Anim.enabled = true;
-                Anim.Play("Attack");
+                //Anim.enabled = true;
+                ///Anim.Play("Attack");
             }
             if (transform.position.y < OffScreen)
             {

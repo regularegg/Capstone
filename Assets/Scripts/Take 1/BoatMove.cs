@@ -86,6 +86,8 @@ public class BoatMove : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         health = 6;
+        
+        SR.color = Color.black;
     }
 
     void Update()
@@ -109,7 +111,6 @@ public class BoatMove : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other){
-        SR.color = Color.white;
         BeingHit = false;
     }
 

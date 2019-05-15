@@ -130,6 +130,17 @@ public class Improved_GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "GamePlay")
         {
+            if (BoatMove.BM.score <= 7) {
+                currentLevel = 0;
+            } else if (BoatMove.BM.score <= 10) {
+                currentLevel = 1;
+            } else if (BoatMove.BM.score <= 17) {
+                currentLevel = 2;
+            } else if (BoatMove.BM.score <= 27) {
+                currentLevel = 3;
+            } else {
+                currentLevel = 4;
+            }
             if (floatedDownTheRiver()) {
                 returnToQueue();
                 toCheckForPooling = floatinDownTheRiver;

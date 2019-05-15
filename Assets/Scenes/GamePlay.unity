@@ -211,14 +211,43 @@ MonoBehaviour:
   tenticles: {fileID: 4889909505845955447, guid: 5d5f940e9c2514f5fa5e3ebc1206c8aa,
     type: 3}
   levels_0_difficulty:
-  - {fileID: 4900000, guid: ae66f5bf095f04ce58ece5fb9b71e2ba, type: 3}
-  - {fileID: 4900000, guid: 48f3f13c4cc634c229425727b91f7987, type: 3}
-  - {fileID: 4900000, guid: 411409f7c1e324aeeb450679eae4a917, type: 3}
-  - {fileID: 4900000, guid: 4be8d28a595034b798924f78efaecea0, type: 3}
-  levels_1_difficulty: []
-  levels_2_difficulty: []
-  levels_3_difficulty: []
-  levels_4_difficulty: []
+  - {fileID: 4900000, guid: f091220b2da54460a9db9e7f0ff0b965, type: 3}
+  - {fileID: 4900000, guid: acb1dd89b783e421281d3cad19a922b8, type: 3}
+  - {fileID: 4900000, guid: 2a44d1d38f4704d3ab00ef79dcdc0fcd, type: 3}
+  levels_1_difficulty:
+  - {fileID: 4900000, guid: 5211da8ad751a45398eb48f262a3cc30, type: 3}
+  - {fileID: 4900000, guid: 312cb1d2bfd7047bcba8c16bb1c9791f, type: 3}
+  - {fileID: 4900000, guid: 5bde05f27cc9b4487998e9efef047b56, type: 3}
+  - {fileID: 4900000, guid: 48dee12645fc9474b8ba09cbcfc7ac65, type: 3}
+  - {fileID: 4900000, guid: babd3c33d9013486e83ee368bfd35c09, type: 3}
+  - {fileID: 4900000, guid: 4c199ee6f52984abeb89c004552ea061, type: 3}
+  levels_2_difficulty:
+  - {fileID: 4900000, guid: 82bd142911f7041a4b5dfc5e1fdc8e5c, type: 3}
+  - {fileID: 4900000, guid: 9523b9bc01c4d4a2c97a496c6683e2d8, type: 3}
+  - {fileID: 4900000, guid: a9a2a72af6ee34ffb95db90724b16059, type: 3}
+  - {fileID: 4900000, guid: f2538100524404fcba8dc1059b1a5010, type: 3}
+  - {fileID: 4900000, guid: 2b83c95a769024cd8bd3e536101ca34a, type: 3}
+  - {fileID: 4900000, guid: 23fcbefc8ed3b47a3a489369e8cc169e, type: 3}
+  - {fileID: 4900000, guid: 25f7a56717bdb428fa258d5013d0d5be, type: 3}
+  - {fileID: 4900000, guid: 0f7210cddb7db41c298c9e7549fcaf80, type: 3}
+  levels_3_difficulty:
+  - {fileID: 4900000, guid: 6ecc511bf30ae4fe09e14d7f133210c0, type: 3}
+  - {fileID: 4900000, guid: 54493cb146a844a38a9e7be8f74d182e, type: 3}
+  - {fileID: 4900000, guid: 4e141e4062d454b4cad54d21b776e2bd, type: 3}
+  - {fileID: 4900000, guid: 4c8e9bb43214d4d6a885f3ff4f0e33eb, type: 3}
+  - {fileID: 4900000, guid: 6f26dd7cf69044a36913cd71b1f4df86, type: 3}
+  - {fileID: 4900000, guid: 2d33027adf8e84f0b8f53b3362666ead, type: 3}
+  - {fileID: 4900000, guid: 0376f231e7a1144b8beefb4565a9fa02, type: 3}
+  - {fileID: 4900000, guid: 18b4fb181256f42ecb263b005a499338, type: 3}
+  levels_4_difficulty:
+  - {fileID: 4900000, guid: 6d0b7d4edaa73498f88a481899a67035, type: 3}
+  - {fileID: 4900000, guid: b262a953694c1430e8ef065ea50357b2, type: 3}
+  - {fileID: 4900000, guid: d8358aae499584b3fac264b1cb7a90aa, type: 3}
+  - {fileID: 4900000, guid: f4d20bd1974f94484aeeaf9c5480135b, type: 3}
+  - {fileID: 4900000, guid: caf33535fc48f439ebe801c21ba72cf7, type: 3}
+  - {fileID: 4900000, guid: 655d6ec5c6f124a7fb82752fbb1c12a4, type: 3}
+  - {fileID: 4900000, guid: b84a489b4fbf34facbafdfe78efe04e4, type: 3}
+  - {fileID: 4900000, guid: 854ac84cc9de4401d9f35b638d072918, type: 3}
   floatinDownTheRiver: []
   toFloatDownTheRiver: []
   currentLevel: 0
@@ -256,7 +285,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -355,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &590143733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -430,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &611408191
 RectTransform:
   m_ObjectHideFlags: 0

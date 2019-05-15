@@ -45,10 +45,49 @@
             <e p="Improved_GameManager.cs" t="Include" />
             <e p="LeechMonster.cs" t="Include" />
             <e p="LevelText" t="Include">
-              <e p="level 1.txt" t="Include" />
-              <e p="level 2.txt" t="Include" />
-              <e p="level 3.txt" t="Include" />
-              <e p="level 4.txt" t="Include" />
+              <e p="0seq" t="Include">
+                <e p="0a.txt" t="Include" />
+                <e p="0b.txt" t="Include" />
+                <e p="0c.txt" t="Include" />
+              </e>
+              <e p="1seq" t="Include">
+                <e p="1a.txt" t="Include" />
+                <e p="1b.txt" t="Include" />
+                <e p="1c.txt" t="Include" />
+                <e p="1d.txt" t="Include" />
+                <e p="1e.txt" t="Include" />
+                <e p="1f.txt" t="Include" />
+              </e>
+              <e p="2seq" t="Include">
+                <e p="2a.txt" t="Include" />
+                <e p="2b.txt" t="Include" />
+                <e p="2c.txt" t="Include" />
+                <e p="2d.txt" t="Include" />
+                <e p="2e.txt" t="Include" />
+                <e p="2f.txt" t="Include" />
+                <e p="2g.txt" t="Include" />
+                <e p="2h.txt" t="Include" />
+              </e>
+              <e p="3seq" t="Include">
+                <e p="3a.txt" t="Include" />
+                <e p="3b.txt" t="Include" />
+                <e p="3c.txt" t="Include" />
+                <e p="3d.txt" t="Include" />
+                <e p="3e.txt" t="Include" />
+                <e p="3f.txt" t="Include" />
+                <e p="3g.txt" t="Include" />
+                <e p="3h.txt" t="Include" />
+              </e>
+              <e p="4seq" t="Include">
+                <e p="4a.txt" t="Include" />
+                <e p="4b.txt" t="Include" />
+                <e p="4c.txt" t="Include" />
+                <e p="4d.txt" t="Include" />
+                <e p="4e.txt" t="Include" />
+                <e p="4f.txt" t="Include" />
+                <e p="4g.txt" t="Include" />
+                <e p="4h.txt" t="Include" />
+              </e>
             </e>
             <e p="Monster.cs" t="Include" />
             <e p="ScoreDisplay.cs" t="Include" />

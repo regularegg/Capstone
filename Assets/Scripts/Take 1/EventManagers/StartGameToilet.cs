@@ -15,7 +15,8 @@ public class StartGameToilet : MonoBehaviour
 
     public AudioSource AS;
     public AudioClip flush, splash;
-    
+
+    public float speed = 0.5f;
     
 
     // Update is called once per frame
@@ -42,8 +43,9 @@ public class StartGameToilet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            countdown+= 0.5f;
+            countdown+= speed;
             LoadingBar.fillAmount = countdown / 100;
+            StopCoroutine(emptyBar());
         }
     }
 
@@ -53,7 +55,18 @@ public class StartGameToilet : MonoBehaviour
         {
             countdown = 0;
             LoadingBar.fillAmount = countdown / 100;
+            StartCoroutine(emptyBar());
+        }
+    }
 
+    IEnumerator emptyBar()
+    {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        while (countdown < 0)
+        {
+            countdown--;
+            LoadingBar.fillAmount = countdown / 100;
+            yield return wait;
         }
     }
 
