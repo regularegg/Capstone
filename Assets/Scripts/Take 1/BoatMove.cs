@@ -9,7 +9,7 @@ public class BoatMove : MonoBehaviour
 {
     private SpriteRenderer SR;
 
-    public Text healthDispaly;
+    public AudioClip deathClip;
 
     public int highestScore;
 
@@ -118,14 +118,14 @@ public class BoatMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (other.transform.CompareTag("Treat"))
+        if (other.transform.CompareTag("Treat") && Alive)
         {
             AS.clip = HappyClips[Random.Range(0, HappyClips.Length)];
             AS.Play();
             score++;
         }
         
-        if (other.transform.CompareTag("Hazard"))
+        if (other.transform.CompareTag("Hazard") && Alive)
         {
             health--;
             AS.clip = Ouch[Random.Range(0,Ouch.Length)];
@@ -140,10 +140,13 @@ public class BoatMove : MonoBehaviour
             highestScore = score;
         }
 
-        score = 0;
+        Alive = false;
         Improved_GameManager.GM.Permadeath();
         Improved_GameManager.GM.AS.Stop();
-        SceneManager.LoadScene("EndScene");
+        Improved_GameManager.GM.AS.clip = deathClip;
+        Improved_GameManager.GM.AS.Play();
+        Improved_GameManager.GM.AS.loop = false;
+        Instantiate(Death);
         
         health = 6;
     }

@@ -269,7 +269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &477908506
 AudioSource:
@@ -585,7 +585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &688667859
 GameObject:
@@ -1001,82 +1001,8 @@ Transform:
   m_LocalScale: {x: 0.70705354, y: 0.961, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1289131583
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5513360940834214321, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_Name
-      value: Death
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.21910253
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.0595567
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214318, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513360940834214319, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2b75807530974ef0b0573d779c82fa1, type: 3}
 --- !u!1 &1653849115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1211,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 30d70b0f236144797bb879e7cc3025c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0384a448df764435b05a8f2410f2229, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1337,7 +1263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1943714493
 MonoBehaviour:
@@ -1390,7 +1316,7 @@ RectTransform:
   m_Children:
   - {fileID: 892091437}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1616,7 +1542,7 @@ PrefabInstance:
     - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
         type: 3}
       propertyPath: UseMouse
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
         type: 3}
@@ -1651,6 +1577,17 @@ PrefabInstance:
       propertyPath: Hearts.Array.data[2]
       value: 
       objectReference: {fileID: 2146028019}
+    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
+        type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a67b1e4fb63424a83b1c20294001e7e2, type: 3}
+    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
+        type: 3}
+      propertyPath: Death
+      value: 
+      objectReference: {fileID: 5513360940834214321, guid: f2b75807530974ef0b0573d779c82fa1,
+        type: 3}
     - target: {fileID: 943098482, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1681,6 +1618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
@@ -1769,7 +1711,7 @@ PrefabInstance:
     - target: {fileID: 8429760819516047709, guid: 1a9b2a55eed2d4f498a2ce2b6cf73140,
         type: 3}
       propertyPath: useMouse
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a9b2a55eed2d4f498a2ce2b6cf73140, type: 3}

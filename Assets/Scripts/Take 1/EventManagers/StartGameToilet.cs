@@ -16,6 +16,8 @@ public class StartGameToilet : MonoBehaviour
     public AudioSource AS;
     public AudioClip flush, splash;
 
+    public GameObject Slime;
+
     public float speed = 0.5f;
     
 
@@ -81,5 +83,10 @@ public class StartGameToilet : MonoBehaviour
         }
         
         SceneManager.LoadScene(sceneToChange);
+    }
+
+    public void SlimeReveal()
+    {
+        Instantiate(Slime);
     }
 }

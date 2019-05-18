@@ -39,6 +39,7 @@
             <e p="Red Event.cs" t="Include" />
           </e>
           <e p="Take 2" t="Include">
+            <e p="DeathScript.cs" t="Include" />
             <e p="DisplayEndScore.cs" t="Include" />
             <e p="FrogMonster.cs" t="Include" />
             <e p="Generator.cs" t="Include" />

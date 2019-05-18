@@ -14,6 +14,7 @@ public class Improved_GameManager : MonoBehaviour
     // 2 = frog
     // 3 = leech
     // 4 = mr. tenticles
+    
     public GameObject treat;
     public GameObject frog;
     public GameObject leech;

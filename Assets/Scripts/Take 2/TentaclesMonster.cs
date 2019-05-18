@@ -8,7 +8,6 @@ public class TentaclesMonster : Monster
     public Sequence SQ;
     public float speed = 0.75f;
     public Animator Anim;
-    public AudioSource AS;
     public AudioClip Attack;
     
     public bool arrivedAtTarget = true;
@@ -66,13 +65,5 @@ public class TentaclesMonster : Monster
 
         //update the target position for next round
         arrivedAtTarget = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.transform.CompareTag("Player"))
-        {
-            AS.Play();
-        }
     }
 }

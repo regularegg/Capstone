@@ -12,20 +12,13 @@ public class Monster : MonoBehaviour
     protected float OffScreen = -10f;
     protected float OnScreen = 10f;
     protected bool Alive = true;
+    protected AudioSource AS;
     public int Row, Col;
     // Start is called before the first frame update
     void Start()
     {
         Activated = false;
         ReadyForPool = false;
-    }
-    /*
-    protected virtual void Update ()
-    {
-        Debug.Log("PowerUp");
-    }*/
-    public void Move()
-    {
     }
     public void Activate()
     {
@@ -83,5 +76,15 @@ public class Monster : MonoBehaviour
         transform.position = StartPos;
         ReadyForPool = true;
         gameObject.SetActive(false);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            if (other.GetComponent<BoatMove>().Alive)
+            {
+                AS.Play();
+            }
+        }
     }
 }

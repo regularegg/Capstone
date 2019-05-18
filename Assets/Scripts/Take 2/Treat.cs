@@ -27,7 +27,7 @@ public class Treat : Monster
     {
         if (Activated)
         {
-            Move();
+            MeMove();
         }
 
         if (transform.position.y < OffScreen)
@@ -36,7 +36,7 @@ public class Treat : Monster
         }
     }
     
-    void Move()
+    void MeMove()
     {
         transform.position += Vector3.down * speed;
     }

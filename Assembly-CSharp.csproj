@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Take 1\Generators\TreatGenerator.cs" />
     <Compile Include="Assets\Scripts\Take 1\Generators\TunnelSpawner.cs" />
     <Compile Include="Assets\Scripts\Take 1\Red Event.cs" />
+    <Compile Include="Assets\Scripts\Take 2\DeathScript.cs" />
     <Compile Include="Assets\Scripts\Take 2\DisplayEndScore.cs" />
     <Compile Include="Assets\Scripts\Take 2\FrogMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Generator.cs" />
