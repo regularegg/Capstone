@@ -14,6 +14,7 @@ public class BoatMove : MonoBehaviour
     public int highestScore;
 
     public TextMeshPro textDisplay;
+    public GameObject Death;
 
     public Image[] Hearts;
     public Sprite fullHeart, halfHeart, emptyHeart;
