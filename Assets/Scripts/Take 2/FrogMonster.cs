@@ -6,7 +6,6 @@ public class FrogMonster : Monster
 {
     public Sequence SQ;
     public float speed = 0.1f;
-    public Animator Anim;
     public AudioClip Attack;
 
     // Start is called before the first frame update
@@ -16,8 +15,7 @@ public class FrogMonster : Monster
         Anim = GetComponent<Animator>();
         AS = GetComponent<AudioSource>();
         AS.clip = Attack;
-        Anim.enabled = false;
-        //TEMP
+        hitAnim = "frong";
     }
 
     void Update()
@@ -29,7 +27,6 @@ public class FrogMonster : Monster
             if (transform.position.y < OnScreen)
             {
                 Anim.enabled = true;
-                Anim.Play("Attack");
             }
             if (transform.position.y < OffScreen)
             {

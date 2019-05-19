@@ -122,6 +122,8 @@ GameObject:
   m_Component:
   - component: {fileID: 253952223}
   - component: {fileID: 253952224}
+  - component: {fileID: 253952225}
+  - component: {fileID: 253952226}
   m_Layer: 5
   m_Name: HEARTS
   m_TagString: Untagged
@@ -174,6 +176,115 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!82 &253952225
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253952222}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ef4f58450d9f24f77a20542dcda2b162, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &253952226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253952222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62729de26417a4971a09d1a4c1d30f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 253952225}
 --- !u!1 &477908503
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +364,7 @@ MonoBehaviour:
   currentLevel: 0
   AS: {fileID: 477908506}
   PlaySceneMusic: {fileID: 8300000, guid: ca4af3f99bf334a059a7656edef8f57d, type: 3}
+  BGLoop: {fileID: 0}
   PlayAudio: 0
   Score: 0
   Health: 0
@@ -1526,44 +1638,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
         type: 3}
-      propertyPath: Hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: healthDispaly
-      value: 
-      objectReference: {fileID: 1150288494}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: BeingHit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: UseMouse
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: fullHeart
-      value: 
-      objectReference: {fileID: 21300000, guid: e8c283009a73043a19d788481ca2cf0d,
-        type: 3}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: halfHeart
-      value: 
-      objectReference: {fileID: 21300002, guid: 55b716722ad594dbabfe25874c6b3392,
-        type: 3}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: emptyHeart
-      value: 
-      objectReference: {fileID: 21300000, guid: 1db6a1b29a1b04141bae7ccc1e51ab0d,
-        type: 3}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
       propertyPath: Hearts.Array.data[0]
       value: 
       objectReference: {fileID: 688667861}
@@ -1577,17 +1651,6 @@ PrefabInstance:
       propertyPath: Hearts.Array.data[2]
       value: 
       objectReference: {fileID: 2146028019}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: deathClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a67b1e4fb63424a83b1c20294001e7e2, type: 3}
-    - target: {fileID: 3315029670132802873, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: Death
-      value: 
-      objectReference: {fileID: 5513360940834214321, guid: f2b75807530974ef0b0573d779c82fa1,
-        type: 3}
     - target: {fileID: 943098482, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1599,30 +1662,6 @@ PrefabInstance:
     - target: {fileID: 943098480, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1847858871, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315029670132802876, guid: 2208e7182c1e84b61972f1ae6b99ddc5,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2208e7182c1e84b61972f1ae6b99ddc5, type: 3}

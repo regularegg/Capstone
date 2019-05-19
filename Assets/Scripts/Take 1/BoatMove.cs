@@ -9,7 +9,7 @@ public class BoatMove : MonoBehaviour
 {
     private SpriteRenderer SR;
 
-    public AudioClip deathClip;
+    public AudioClip deathClip, backgroundLoop;
 
     public int highestScore;
 

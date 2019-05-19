@@ -18,14 +18,17 @@ public class StartGameToilet : MonoBehaviour
 
     public GameObject Slime;
 
-    public float speed = 0.5f;
+    public float speed = 1;
+
+    private bool SwitchingScenes;
     
 
     // Update is called once per frame
     void Update()
     {
-        if (countdown >= 100 && countdown <= 101.5f) 
+        if (countdown >= 100 && countdown <= 101.5f)
         {
+            SwitchingScenes = true;
             StartCoroutine(changeScene());
         }
     }
@@ -37,6 +40,7 @@ public class StartGameToilet : MonoBehaviour
             AS.Stop();
             AS.clip = splash;
             AS.Play();
+            StopAllCoroutines();
         }
         
     }
@@ -47,7 +51,6 @@ public class StartGameToilet : MonoBehaviour
         {
             countdown+= speed;
             LoadingBar.fillAmount = countdown / 100;
-            StopCoroutine(emptyBar());
         }
     }
 
@@ -55,7 +58,7 @@ public class StartGameToilet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            countdown = 0;
+            //countdown = 0;
             LoadingBar.fillAmount = countdown / 100;
             StartCoroutine(emptyBar());
         }
@@ -64,9 +67,9 @@ public class StartGameToilet : MonoBehaviour
     IEnumerator emptyBar()
     {
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
-        while (countdown < 0)
+        while (countdown > 0 && !SwitchingScenes)
         {
-            countdown--;
+            countdown -= speed;
             LoadingBar.fillAmount = countdown / 100;
             yield return wait;
         }
@@ -81,12 +84,10 @@ public class StartGameToilet : MonoBehaviour
         {
             yield return wait;
         }
-        
+        BoatMove.BM.AS.Stop();
+        BoatMove.BM.AS.loop = false;
+        BoatMove.BM.AS.volume = 1;
+        BoatMove.BM.Alive = true;
         SceneManager.LoadScene(sceneToChange);
-    }
-
-    public void SlimeReveal()
-    {
-        Instantiate(Slime);
     }
 }

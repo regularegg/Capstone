@@ -100,7 +100,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.74, y: 3.07}
+    oldSize: {x: 5.753846, y: 4.723077}
     newSize: {x: 12.533334, y: 10.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -184,7 +184,6 @@ MonoBehaviour:
   SQ: {fileID: 0}
   speed: 0
   Anim: {fileID: 0}
-  AS: {fileID: 1584634773483569666}
   Attack: {fileID: 8300000, guid: 9fe045a741e164c029c692a5f4b1c059, type: 3}
 --- !u!82 &1584634773483569666
 AudioSource:
@@ -290,7 +289,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7359477690415627222}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 33b2ec0c786d748b089c7fca640bf3aa, type: 2}
   m_CullingMode: 0

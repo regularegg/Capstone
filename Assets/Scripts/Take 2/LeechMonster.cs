@@ -25,6 +25,8 @@ public class LeechMonster : Monster
         AS.GetComponent<AudioSource>();
         alive = true;
         AS.clip = Attack_Clip;
+        Anim = GetComponent<Animator>();
+        hitAnim = "LeechAnim";
         SR = GetComponent<SpriteRenderer>();
     }
 

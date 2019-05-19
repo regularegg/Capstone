@@ -11,7 +11,10 @@ public class Monster : MonoBehaviour
     protected Vector3 Target, StartPos;
     protected float OffScreen = -10f;
     protected float OnScreen = 10f;
-    protected bool Alive = true;
+    
+    public Animator Anim;
+    public string hitAnim;
+    
     protected AudioSource AS;
     public int Row, Col;
     // Start is called before the first frame update
@@ -24,6 +27,7 @@ public class Monster : MonoBehaviour
     {
         Debug.Log("calling for duty");
         Activated = true;
+        
     }
     //row() returns current "row"
     //setRow() if negative, sets row to above top of screen
@@ -84,6 +88,7 @@ public class Monster : MonoBehaviour
             if (other.GetComponent<BoatMove>().Alive)
             {
                 AS.Play();
+                Anim.Play(hitAnim);
             }
         }
     }

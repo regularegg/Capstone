@@ -34,7 +34,7 @@ public class Improved_GameManager : MonoBehaviour
 
     //Background music
     public AudioSource AS;
-    public AudioClip PlaySceneMusic;
+    public AudioClip PlaySceneMusic, BGLoop;
     public bool PlayAudio;
     
     //Player stats
@@ -59,7 +59,7 @@ public class Improved_GameManager : MonoBehaviour
 
         //DontDestroyOnLoad(gameObject);
 
-
+        
         StartGame();
 
     }
@@ -69,6 +69,7 @@ public class Improved_GameManager : MonoBehaviour
         Debug.Log("Started Game");
         
         instatiatePoolObjects();
+        
 
         fillAllLevels();
         floatinDownTheRiver = setUpTheHounds();

@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Take 2\DisplayEndScore.cs" />
     <Compile Include="Assets\Scripts\Take 2\FrogMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Generator.cs" />
+    <Compile Include="Assets\Scripts\Take 2\HealthHeart.cs" />
     <Compile Include="Assets\Scripts\Take 2\Improved_GameManager.cs" />
     <Compile Include="Assets\Scripts\Take 2\LeechMonster.cs" />
     <Compile Include="Assets\Scripts\Take 2\Monster.cs" />

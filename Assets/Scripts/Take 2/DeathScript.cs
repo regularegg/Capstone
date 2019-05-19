@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DeathScript : MonoBehaviour
 {
@@ -10,11 +11,35 @@ public class DeathScript : MonoBehaviour
     public TextMeshPro TM_Death, TM_Score;
     
     public AudioClip LoopClip;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject cv;
+
+    private int _counter;
+    public int Counter
     {
+        get { return _counter; }
+        set
+        {
+            switch (value)
+            {
+                    case 1:
+                        BoatMove.BM.AS.clip = BoatMove.BM.backgroundLoop;
+                        BoatMove.BM.AS.volume = 0.2f;
+                        BoatMove.BM.AS.Play();
+                        BoatMove.BM.AS.loop = true;
+                        StartCoroutine(Timer(2));
+                        break;
+                    case 2:
+                        DisplayLargeText("Your Score: ");
+                        DisplaySmallText(BoatMove.BM.score);
+                        StartCoroutine(Timer(5));
+                        break;
+                    case 3:
+                        ChangeScene();
+                        break;
+            }
+            _counter = value;
+        }
     }
 
     void DisplayDeath()
@@ -24,7 +49,12 @@ public class DeathScript : MonoBehaviour
         
         TM_Score.sortingOrder = 10;
         TM_Death.sortingOrder = 10;
+        Counter = 0;
         StartCoroutine(MoveTextDown());
+        
+        
+        cv = GameObject.Find("Subscreen");
+        cv.SetActive(false);
     }
 
     IEnumerator MoveTextDown()
@@ -35,21 +65,37 @@ public class DeathScript : MonoBehaviour
         float count = 0;
         while (count < 1)
         {
-            Debug.Log("woo");
             TM_Death.transform.position= Vector3.Lerp(startPos,endPos,count);
             count+= 0.008f;
             yield return wait;
         }
-        
+
+        Counter++;
     }
-    IEnumerator Timer()
+    IEnumerator Timer(float time)
     {
-        WaitForSeconds wait = new WaitForSeconds(5);
+        WaitForSeconds wait = new WaitForSeconds(time);
 
         for (int i = 0; i < 1; i++)
         {
             yield return wait;
         }
+
+        Counter++;
+    }
+
+    void DisplayLargeText(string text)
+    {
+        TM_Death.text = text;
+    }
+    
+    void DisplaySmallText(int text)
+    {
+        TM_Score.text = "" + text;
+    }
+    
+    void ChangeScene()
+    {
         Improved_GameManager.GM.AS.loop = true;
         Improved_GameManager.GM.AS.clip = LoopClip;
 
@@ -57,5 +103,9 @@ public class DeathScript : MonoBehaviour
         SceneManager.LoadScene("StartMenuScene");
     }
     
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
     
 }

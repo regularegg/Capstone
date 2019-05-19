@@ -409,9 +409,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 9c9477c4fbed44694ab4d7af66f21240, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -480,9 +480,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01b6ffa549cb4e60b30d2ce1f49baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthDispaly: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: a67b1e4fb63424a83b1c20294001e7e2, type: 3}
+  backgroundLoop: {fileID: 8300000, guid: fa4198b4b03d9420f9fc97908ae683c9, type: 3}
+  highestScore: 0
   textDisplay: {fileID: 943098480}
-  health: 100
+  Death: {fileID: 5513360940834214321, guid: f2b75807530974ef0b0573d779c82fa1, type: 3}
+  Hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 21300000, guid: e8c283009a73043a19d788481ca2cf0d, type: 3}
+  halfHeart: {fileID: 21300002, guid: 55b716722ad594dbabfe25874c6b3392, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 1db6a1b29a1b04141bae7ccc1e51ab0d, type: 3}
+  Alive: 1
   score: 0
   BeingHit: 0
   lrLeft: {fileID: 3315029670422017360}
@@ -508,7 +518,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
