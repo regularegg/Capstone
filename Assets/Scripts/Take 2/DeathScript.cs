@@ -66,7 +66,7 @@ public class DeathScript : MonoBehaviour
         while (count < 1)
         {
             TM_Death.transform.position= Vector3.Lerp(startPos,endPos,count);
-            count+= 0.008f;
+            count+= 0.004f;
             yield return wait;
         }
 

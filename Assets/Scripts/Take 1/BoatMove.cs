@@ -100,7 +100,7 @@ public class BoatMove : MonoBehaviour
         }
         lrLeft.SetPosition(0,lrLeft.transform.position);
         lrRight.SetPosition(0,lrRight.transform.position);
-
+/*
         if (SceneManager.GetActiveScene().name == "StartMenuScene")
         {
             textDisplay.text = "Lower me into toilet to start";
@@ -108,7 +108,7 @@ public class BoatMove : MonoBehaviour
         else
         {
             textDisplay.text = "";
-        }
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D other){

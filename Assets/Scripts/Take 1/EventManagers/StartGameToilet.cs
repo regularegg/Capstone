@@ -16,8 +16,6 @@ public class StartGameToilet : MonoBehaviour
     public AudioSource AS;
     public AudioClip flush, splash;
 
-    public GameObject Slime;
-
     public float speed = 1;
 
     private bool SwitchingScenes;
@@ -26,7 +24,7 @@ public class StartGameToilet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (countdown >= 100 && countdown <= 101.5f)
+        if (countdown >= 100 && countdown < 101f && !SwitchingScenes)
         {
             SwitchingScenes = true;
             StartCoroutine(changeScene());
@@ -35,7 +33,7 @@ public class StartGameToilet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !SwitchingScenes)
         {
             AS.Stop();
             AS.clip = splash;
@@ -47,7 +45,7 @@ public class StartGameToilet : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&& !SwitchingScenes)
         {
             countdown+= speed;
             LoadingBar.fillAmount = countdown / 100;
@@ -56,7 +54,7 @@ public class StartGameToilet : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&& !SwitchingScenes)
         {
             //countdown = 0;
             LoadingBar.fillAmount = countdown / 100;
@@ -77,6 +75,7 @@ public class StartGameToilet : MonoBehaviour
 
     IEnumerator changeScene()
     {
+        Debug.Log("Switchsn");
         AS.clip = flush;
         AS.Play();
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
